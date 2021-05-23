@@ -1,0 +1,77 @@
+@import url("https://spaceuicss.netlify.app/main.css");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-5: rgb(0, 0, 0);
+  --dark-4: rgb(16, 16, 16);
+  --dark-3: rgb(32, 32, 32);
+  --dark-2: rgb(48, 48, 48);
+  --dark-1: rgb(64, 64, 64);
+
+  --light-5: rgb(128, 128, 128);
+  --light-4: rgb(144, 144, 144);
+  --light-3: rgb(160, 160, 160);
+  --light-2: rgb(176, 176, 176);
+  --light-1: rgb(192, 192, 192);
+  --light: rgb(208, 208, 208);
+  /* --light-1: rgb(192, 192, 192); */
+
+  --logo: #34d399;
+
+  --b-radius-1: 10px;
+  --b-radius-2: 20px;
+  --b-radius-3: 25px;
+  --b-radius-4: 30px;
+  --b-radius-max: 100%;
+
+  --font-3xsm: 0.5rem;
+  --font-2xsm: 0.75rem;
+  --font-xsm: 0.8rem;
+  --font-sm: 0.9rem;
+  --font-avg: 1rem;
+  --font-m: 1.125rem;
+  --font-lg: 1.25rem;
+  --font-xl: 1.5rem;
+
+  --padding-sm: 0.5rem;
+  --padding: 1rem;
+  --padding-lg: 2rem;
+}
+
+body {
+  font-family: "Roboto";
+}
+
+.text-link {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+.flex-container {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--gray-400);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--medium-gray);
+}

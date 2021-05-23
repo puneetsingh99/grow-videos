@@ -1,0 +1,27 @@
+.navbar {
+  width: 100%;
+  border-bottom: solid 1px var(--gray-100);
+  position: sticky;
+  top: 0px;
+  opacity: 1;
+  background-color: var(--white);
+}
+
+.navbar-container {
+  padding: 0.5rem;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-column-gap: 2rem;
+  align-items: center;
+  width: 95%;
+  margin: auto;
+  padding: 1rem;
+}
+
+@media (max-width: 640px) {
+  .navbar-container {
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-column-gap: 0.5rem;
+    width: 100%;
+  }
+}

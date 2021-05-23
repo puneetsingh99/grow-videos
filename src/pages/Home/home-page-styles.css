@@ -1,0 +1,37 @@
+.homepage-main {
+  width: 95%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+}
+
+.main,
+.navpill-container {
+  width: 100%;
+}
+.main {
+  background-color: var(--gray-100);
+  min-height: 100vh;
+}
+
+.navpill-container {
+  margin: auto;
+  background-color: var(--white);
+  border-bottom: solid 1px var(--gray-100);
+  position: fixed;
+  padding-right: 1rem;
+}
+
+.video-container {
+  margin-top: 4rem;
+}
+@media (max-width: 640px) {
+  .homepage-main {
+    width: 100%;
+  }
+
+  .video-container {
+    margin-top: 6rem;
+  }
+}

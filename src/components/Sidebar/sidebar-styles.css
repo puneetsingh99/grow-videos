@@ -1,0 +1,37 @@
+.sidebar {
+  color: var(--dark-4);
+  padding: 1rem 0rem;
+  font-size: 1rem;
+  font-weight: 550;
+  height: 85vh;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar-menu-list {
+  list-style: none;
+}
+
+.sidebar-menu-item {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.sidebar-menu-item:hover {
+  background-color: var(--gray-100);
+}
+
+.highlighted {
+  background-color: var(--gray-100);
+}
+
+@media (max-width: 640px) {
+  .sidebar {
+    display: none;
+  }
+}
