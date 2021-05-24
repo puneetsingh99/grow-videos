@@ -6,13 +6,17 @@ export const VideoList = () => {
   const { filteredVideos } = useVideos();
   return (
     <ul className={`video-list`}>
-      {filteredVideos.map((video) => {
-        return (
-          <li key={video.id} className={`video`}>
-            <VideoCard video={video} />
-          </li>
-        );
-      })}
+      {filteredVideos ? (
+        filteredVideos.map((video) => {
+          return (
+            <li key={video.id} className={`video`}>
+              <VideoCard video={video} />
+            </li>
+          );
+        })
+      ) : (
+        <h1> Loading...</h1>
+      )}
     </ul>
   );
 };
