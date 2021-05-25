@@ -4,6 +4,9 @@ import { removeFromPlaylist } from "./removeFromPlaylist";
 
 export const userReducer = (state, action) => {
   switch (action.type) {
+    case "SET_USER":
+      return action.payload;
+
     case "CREATE_PLAYLIST":
       const { playlistName } = action.payload;
 
@@ -22,7 +25,7 @@ export const userReducer = (state, action) => {
       }
       return {
         ...state,
-        playlists: createPlaylist(state.playlists, playlistName)
+        playlists: createPlaylist(state.playlists, playlistName),
       };
 
     case "DELETE_PLAYLIST":
@@ -30,7 +33,7 @@ export const userReducer = (state, action) => {
         ...state,
         playlists: state.playlists.filter(
           (playlist) => playlist.playlistName !== action.payload.playlistName
-        )
+        ),
       };
 
     case "ADD_TO_PLAYLIST":
@@ -40,7 +43,7 @@ export const userReducer = (state, action) => {
           state.playlists,
           action.payload.playlistName,
           action.payload.videoId
-        )
+        ),
       };
     case "REMOVE_FROM_PLAYLIST":
       return {
@@ -49,7 +52,7 @@ export const userReducer = (state, action) => {
           state.playlists,
           action.payload.playlistName,
           action.payload.videoId
-        )
+        ),
       };
     default:
       return state;

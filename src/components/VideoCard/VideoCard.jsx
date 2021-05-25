@@ -2,8 +2,8 @@ import "./videocard-styles.css";
 import { Link } from "react-router-dom";
 
 export const VideoCard = ({ video }) => {
-  const { thumbnail, title, videoId } = video;
-
+    const { thumbnail, title, _id: videoId } = video;
+    
   console.log(`play/${videoId}`);
 
   return (

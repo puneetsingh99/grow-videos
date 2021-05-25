@@ -8,7 +8,7 @@ export const VideoPlayerPage = () => {
   const { videoId } = useParams();
   const { allVideos } = useVideos();
 
-  const video = allVideos.find((video) => video.videoId === videoId);
+  const video = allVideos.find((video) => video._id === videoId);
 
   return (
     <main className={`video-player-page`}>
@@ -22,7 +22,11 @@ export const VideoPlayerPage = () => {
         />
       </section>
       <div className="video-info-container">
-        <VideoInfo videoId={videoId} video={video} />
+        {allVideos ? (
+          <VideoInfo videoId={videoId} video={video} />
+        ) : (
+          <h1>Loading...</h1>
+        )}
       </div>
     </main>
   );

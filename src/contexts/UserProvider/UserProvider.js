@@ -1,22 +1,19 @@
-import { createContext, useContext, useReducer } from "react";
-import { v4 as uuidv4 } from "uuid";
+import { createContext, useContext, useReducer, useEffect } from "react";
 import { userReducer } from "./userReducer";
+import { getUser } from "./getUser";
 
 const UserContext = createContext();
 
 const initialState = {
   name: "",
-  playlists: [
-    {
-      id: uuidv4(),
-      playlistName: "My Playlist",
-      videos: []
-    }
-  ]
+  email: "",
+  playlists: [],
 };
 
 export const UserProvider = ({ children }) => {
   const [user, userDispatch] = useReducer(userReducer, initialState);
+  console.log(user);
+  useEffect(() => getUser(userDispatch), []);
   return (
     <UserContext.Provider value={{ user, userDispatch }}>
       {children}

@@ -8,7 +8,7 @@ export const filterVideosByCategoryAndPlaylist = (
     "All",
     "Investing",
     "Trading",
-    "Commodities"
+    "Commodities",
   ];
 
   if (currPlaylist === "" || currPlaylist === "All") {
@@ -27,8 +27,9 @@ export const filterVideosByCategoryAndPlaylist = (
   if (playlist.length > 0) {
     const videosInPlaylist = playlist[0].videos;
     const filteredVideos = allVideos.filter((video) =>
-      videosInPlaylist.includes(video.videoId)
+      videosInPlaylist.includes(video._id)
     );
+
     return filteredVideos;
   }
   return allVideos;
