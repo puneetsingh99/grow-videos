@@ -1,7 +1,7 @@
-export { VideoProvider, useVideos } from "./VideoProvider/VideoProvider";
+export { VideoProvider, useVideos } from "./video-context/VideoProvider";
 export {
   PlaylistProvider,
-  usePlaylist
-} from "./PlaylistProvider/PlaylistProvider";
-export { UserProvider, useUser } from "./UserProvider/UserProvider";
-export { AuthProvider, useAuth } from "./AuthProvider/AuthProvider";
+  usePlaylist,
+} from "./playlist-context/PlaylistProvider";
+export { UserProvider, useUser } from "./user-context/UserProvider";
+export { AuthProvider, useAuth } from "./auth-context/AuthProvider";

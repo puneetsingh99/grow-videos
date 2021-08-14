@@ -1,8 +1,4 @@
-export const filterVideosByCategoryAndPlaylist = (
-  allVideos,
-  currPlaylist,
-  user
-) => {
+export const filterVideos = (allVideos, currPlaylist, user) => {
   const predefinedPlaylists = [
     "Futures and Options",
     "All",

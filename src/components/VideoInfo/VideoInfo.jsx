@@ -1,7 +1,7 @@
 import "./video-info-styles.css";
-import { Avatar } from "../Avatar/Avatar";
+import { Avatar } from "../avatar/Avatar";
 import { AddToPlaylistSvg } from "../../assets";
-import { AddToPlaylist } from "../AddToPlaylist/AddToPlaylist";
+import { AddToPlaylist } from "../playlist/AddToPlaylist";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 

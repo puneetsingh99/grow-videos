@@ -1,12 +1,11 @@
 import "./nav-pill-styles.css";
 import { NavPill } from "./NavPill";
-import { usePlaylist, useUser } from "../../contexts";
+import { usePlaylist, useUser } from "../../../contexts";
 
 export const NavPillList = () => {
-  const { existingPlaylist } = usePlaylist();
   const { user } = useUser();
 
-  const allPlaylists = [...existingPlaylist.playlists, ...user.playlists];
+  const allPlaylists = [...user.playlists];
 
   return (
     <ul className={`nav-pill-list`}>

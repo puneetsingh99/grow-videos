@@ -1,8 +1,8 @@
 import "./searchbar-styles.css";
-import { SearchSvg } from "../../assets";
-import { useVideos } from "../../contexts";
+import { SearchSvg } from "../../../assets";
+import { useVideos } from "../../../contexts";
 
-export const Searchbar = () => {
+export const SearchBar = () => {
   const { searchKeyword, setSearchKeyword } = useVideos();
   return (
     <article className="searchbar">

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useVideos } from "../../contexts";
+import { useVideos } from "../../../contexts";
 import "./nav-pill-styles.css";
 
 export const NavPill = ({ playlist, onClickHandler }) => {

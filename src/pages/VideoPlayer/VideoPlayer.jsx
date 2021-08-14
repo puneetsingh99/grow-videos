@@ -1,14 +1,18 @@
 import "./video-player-page-styles.css";
 import ReactPlayer from "react-player";
-import { Navbar, VideoInfo } from "../../components";
+import { NavBar, VideoInfo } from "../../components";
 import { useParams } from "react-router-dom";
 import { useVideos } from "../../contexts";
 
 export const VideoPlayerPage = () => {
   const { videoId } = useParams();
   const { allVideos } = useVideos();
+  const { status, error, videoList } = allVideos;
 
-  const video = allVideos.find((video) => video._id === videoId);
+  // if(status === "succeeded"){
+  //   const video
+  // }
+  const video = allVideos?.find((video) => video.videoId === videoId);
 
   return (
     <main className={`video-player-page`}>

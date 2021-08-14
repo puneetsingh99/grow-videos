@@ -7,8 +7,8 @@ export default function App() {
   return (
     <div className="App">
       <Routes>
-        <PrivateRoute path="/" end element={<HomePage />} />
-        <PrivateRoute path="/play/:videoId" end element={<VideoPlayerPage />} />
+        <Route path="/" end element={<HomePage />} />
+        <Route path="/play/:videoId" end element={<VideoPlayerPage />} />
         <Route path="/login" end element={<Login />} />
         <Route path="/signup" end element={<Signup />} />
       </Routes>
