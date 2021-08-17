@@ -2,14 +2,13 @@ import "./logo-styles.css";
 import { LogoSvg } from "../../assets";
 import { Link } from "react-router-dom";
 
-export const Logo = () => {
+export const Logo = ({ size }) => {
   return (
     <Link className={`text-link`} to={`/`}>
       <div className={`branding`}>
         <div className={`logo`}>
-          <LogoSvg />
+          <LogoSvg size={size} />
         </div>
-        <div className={`brand-name`}>{`Grow`}</div>
       </div>
     </Link>
   );

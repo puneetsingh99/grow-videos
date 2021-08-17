@@ -5,10 +5,9 @@ import { AddToPlaylist } from "../playlist/AddToPlaylist";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-export const VideoInfo = ({ videoId, video }) => {
+export const VideoInfo = ({ video }) => {
   const [showAddToPlaylistModal, setShowAddToPlaylistModal] = useState(false);
-  const { title, channelAvatar, channelName, videoDesc } = video;
-
+  const { title, channelAvatar, channelName, videoDesc, videoId } = video;
   return (
     <article className={`video-info`}>
       <div className={`title-container`}>

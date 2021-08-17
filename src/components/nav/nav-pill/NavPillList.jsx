@@ -10,7 +10,7 @@ export const NavPillList = () => {
   return (
     <ul className={`nav-pill-list`}>
       {allPlaylists.map((playlist) => (
-        <li key={playlist.id}>
+        <li key={playlist._id}>
           <NavPill
             playlist={playlist.playlistName}
             onClickHandler={() => console.log("Onclick works!!")}

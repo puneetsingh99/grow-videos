@@ -1,6 +1,6 @@
 import "./sidebar-styles.css";
 
-export const Sidebar = () => {
+export const SideBar = () => {
   return (
     <div className={`sidebar`}>
       <ul className={`sidebar-menu-list`}>

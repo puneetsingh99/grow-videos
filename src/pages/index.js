@@ -1,2 +1,4 @@
-export { HomePage } from "./Home/Home";
-export { VideoPlayerPage } from "./VideoPlayer/VideoPlayer";
+export { Home } from "./home/Home";
+export { VideoPlayerPage } from "./play-video/VideoPlayer";
+export { Login } from "./private/login/Login";
+export { Signup } from "./private/signup/Signup";

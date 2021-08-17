@@ -1,5 +1,5 @@
 import axios from "axios";
-import { API_ALL_VIDEOS } from "../../../api";
+import { API_ALL_VIDEOS } from "../../../utils/api";
 
 export const getAllVideos = async (setAllVideos) => {
   try {

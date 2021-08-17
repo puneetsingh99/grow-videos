@@ -18,7 +18,7 @@
 }
 
 .modal {
-  background-color: white;
+  background-color: var(--clr-dark-3);
   border-radius: 10px;
   max-width: 350px;
 }
@@ -32,6 +32,17 @@
   align-items: center;
   gap: 1rem;
   margin-bottom: 1rem;
+}
+
+.input-text {
+  background-color: var(--clr-dark-2);
+  border: none;
+  outline: none;
+  color: var(--txt-light-2);
+}
+
+.btn-create-playlist {
+  max-width: 100px;
 }
 
 .select-playlist {
@@ -77,7 +88,6 @@
 }
 
 .select-playlist {
-  /* border: solid 1px green; */
   width: 100%;
   padding: 0.5rem 0rem;
 }

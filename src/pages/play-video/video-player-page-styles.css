@@ -20,18 +20,6 @@
   list-style: none;
 }
 
-.btn-new-playlist {
-  background-color: var(--gray-200);
-  color: var(--black);
-  max-width: 30%;
-  border: solid 1px var(--gray-100);
-  margin-bottom: 0rem;
-}
-
-.btn-new-playlist:hover {
-  background-color: var(--gray-400);
-}
-
 @media (max-width: 640px) {
   .video-player {
     height: 30vh;

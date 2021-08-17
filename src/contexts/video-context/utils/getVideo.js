@@ -1,9 +1,9 @@
 import axios from "axios";
-import { apiGetUser } from "../../utils/api";
+import { apiGetVideo } from "../../../utils/api";
 
-export const getUser = async (userId) => {
+export const getVideo = async (videoId) => {
   try {
-    const response = await axios.get(apiGetUser(userId));
+    const response = await axios.get(apiGetVideo(videoId));
     return response.data;
   } catch (error) {
     console.log(error.message);

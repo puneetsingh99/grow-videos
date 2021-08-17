@@ -22,7 +22,6 @@ export const VideoProvider = ({ children }) => {
   useEffect(() => {
     (async function () {
       setAllVideos((currState) => ({ ...currState, status: "loading" }));
-
       const response = await getAllVideos(setAllVideos);
 
       if (response.videoList) {
@@ -33,7 +32,7 @@ export const VideoProvider = ({ children }) => {
       return setAllVideos((currState) => ({
         ...currState,
         status: "error",
-        error: error?.message,
+        error: response?.message,
       }));
     })();
   }, []);

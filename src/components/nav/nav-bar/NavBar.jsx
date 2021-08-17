@@ -6,10 +6,10 @@ import { FiUser } from "react-icons/fi";
 export const NavBar = ({ hideSearch }) => {
   return (
     <nav className="navbar">
-      <section className="navbar-container">
+      <section className="navbar-container flex-bc">
         <Logo />
         {!hideSearch && <SearchBar />}
-        <FiUser size={30} />
+        <FiUser size={25} />
       </section>
     </nav>
   );

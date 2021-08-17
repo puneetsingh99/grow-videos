@@ -23,6 +23,7 @@ export const SelectPlaylist = ({ playlistName, videoId, isAlreadyPresent }) => {
           type="checkbox"
           name="select-playlist-radio"
           checked={isChecked}
+          onChange={() => setIsChecked((currValue) => !currValue)}
           id={playlistName}
           className={`checkbox`}
         />

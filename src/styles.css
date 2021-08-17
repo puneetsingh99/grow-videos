@@ -1,5 +1,5 @@
 @import url("https://spaceuicss.netlify.app/main.css");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap");
 
 * {
   margin: 0;
@@ -8,44 +8,21 @@
 }
 
 :root {
-  --dark-5: rgb(0, 0, 0);
-  --dark-4: rgb(16, 16, 16);
-  --dark-3: rgb(32, 32, 32);
-  --dark-2: rgb(48, 48, 48);
-  --dark-1: rgb(64, 64, 64);
+  --clr-primary: #2563eb;
+  --clr-dark-3: #111827;
+  --clr-dark-2: #1f2937;
+  --clr-dark-1: #374151;
+  --clr-focus: rgba(59, 130, 246, 0.5);
 
-  --light-5: rgb(128, 128, 128);
-  --light-4: rgb(144, 144, 144);
-  --light-3: rgb(160, 160, 160);
-  --light-2: rgb(176, 176, 176);
-  --light-1: rgb(192, 192, 192);
-  --light: rgb(208, 208, 208);
-  /* --light-1: rgb(192, 192, 192); */
-
-  --logo: #34d399;
-
-  --b-radius-1: 10px;
-  --b-radius-2: 20px;
-  --b-radius-3: 25px;
-  --b-radius-4: 30px;
-  --b-radius-max: 100%;
-
-  --font-3xsm: 0.5rem;
-  --font-2xsm: 0.75rem;
-  --font-xsm: 0.8rem;
-  --font-sm: 0.9rem;
-  --font-avg: 1rem;
-  --font-m: 1.125rem;
-  --font-lg: 1.25rem;
-  --font-xl: 1.5rem;
-
-  --padding-sm: 0.5rem;
-  --padding: 1rem;
-  --padding-lg: 2rem;
+  --txt-light-1: #e5e7eb;
+  --txt-light-2: #d1d5db;
+  --txt-light-3: #9ca3af;
 }
 
 body {
-  font-family: "Roboto";
+  font-family: "Inter", sans-serif;
+  background-color: var(--clr-dark-3);
+  color: var(--txt-light-1);
 }
 
 .text-link {
@@ -58,6 +35,25 @@ body {
   gap: 2rem;
   align-items: center;
   justify-content: space-between;
+}
+
+.flex-c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-c-c {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-bc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 ::-webkit-scrollbar {
@@ -74,4 +70,47 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--medium-gray);
+}
+
+.txt-input {
+  width: 100%;
+  background-color: inherit;
+  border: solid 2px var(--clr-dark-1);
+  outline: none;
+  padding: 0.75rem 0.5rem;
+  margin-bottom: 1rem;
+  color: inherit;
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+}
+
+.txt-input:focus {
+  border: solid 0.125rem var(--clr-focus);
+}
+
+.button {
+  width: 100%;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: solid 1px var(--clr-primary);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  cursor: pointer;
+}
+
+.button:focus {
+  outline: solid 2px var(--clr-focus);
+}
+
+.button-primary {
+  background-color: var(--clr-primary);
+  color: var(--txt-light-1);
 }

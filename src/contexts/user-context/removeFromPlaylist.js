@@ -3,7 +3,7 @@ export const removeFromPlaylist = (playlists, playlistName, videoId) => {
     playlist.playlistName === playlistName
       ? {
           ...playlist,
-          videos: playlist.videos.filter((video) => video !== videoId)
+          videos: playlist.videos.filter((video) => video !== videoId),
         }
       : playlist
   );

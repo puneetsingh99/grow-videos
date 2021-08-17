@@ -11,7 +11,7 @@
   width: 100%;
 }
 .main {
-  background-color: var(--gray-100);
+  background-color: var(--clr-dark-3);
   min-height: 100vh;
 }
 
@@ -26,9 +26,11 @@
 .video-container {
   margin-top: 4rem;
 }
+
 @media (max-width: 640px) {
   .homepage-main {
     width: 100%;
+    padding: 1.5rem;
   }
 
   .video-container {

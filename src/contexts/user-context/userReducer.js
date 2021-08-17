@@ -5,7 +5,8 @@ import { removeFromPlaylist } from "./removeFromPlaylist";
 export const userReducer = (state, action) => {
   switch (action.type) {
     case "SET_USER":
-      return action.payload;
+      const { name, playlists } = action.payload;
+      return { name, playlists };
 
     case "CREATE_PLAYLIST":
       const { playlistName } = action.payload;

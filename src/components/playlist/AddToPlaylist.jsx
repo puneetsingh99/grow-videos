@@ -22,11 +22,11 @@ export const AddToPlaylist = ({ toggleModal, setToggle, videoId }) => {
             onChange={(e) => setPlaylistName(e.target.value)}
           />
           <button
-            className={`btn btn-new-playlist`}
+            className={`button button-primary btn-create-playlist`}
             onClick={() => {
               userDispatch({
                 type: "CREATE_PLAYLIST",
-                payload: { playlistName }
+                payload: { playlistName },
               });
               setPlaylistName(() => "");
             }}
@@ -43,7 +43,7 @@ export const AddToPlaylist = ({ toggleModal, setToggle, videoId }) => {
                 );
 
                 return (
-                  <li key={playlist.id}>
+                  <li key={playlist._id}>
                     <SelectPlaylist
                       playlistName={playlist.playlistName}
                       videoId={videoId}
