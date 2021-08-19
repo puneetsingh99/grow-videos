@@ -16,9 +16,6 @@ export const Home = () => {
           <div className={`video-container`}>
             <VideoList />
           </div>
-          <button onClick={logout} className="button">
-            logout
-          </button>
         </div>
       </main>
     </>
