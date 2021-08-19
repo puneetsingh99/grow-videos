@@ -3,8 +3,6 @@ import "./home-page-styles.css";
 import { useAuth } from "../../contexts";
 
 export const Home = () => {
-  const { loginUserWithCredentials, logout } = useAuth();
-  console.log(loginUserWithCredentials);
   return (
     <>
       <NavBar />
