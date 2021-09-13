@@ -1,11 +1,10 @@
-import { VideoCard } from "../../../../components";
-import { useVideos } from "../../../../contexts";
+import { VideoCard } from "../VideoCard/VideoCard";
+import { useVideos } from "../../contexts";
 import "./video-list-styles.css";
 
 export const VideoList = () => {
-  const { filteredVideos, allVideos } = useVideos();
+  const { filteredVideos, allVideos, currPlaylist } = useVideos();
   const { status, error } = allVideos;
-
   let videos;
 
   if (status === "succeeded") {

@@ -1,8 +1,9 @@
 .homepage-main {
-  width: 95%;
+  width: 100%;
+  max-width: 1440px;
   margin: auto;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 6fr;
   grid-gap: 1rem;
 }
 
@@ -23,17 +24,10 @@
   padding-right: 1rem;
 }
 
-.video-container {
-  margin-top: 4rem;
-}
-
 @media (max-width: 640px) {
   .homepage-main {
     width: 100%;
-    padding: 1.5rem;
-  }
-
-  .video-container {
-    margin-top: 6rem;
+    padding: 1.5rem 0rem;
+    grid-template-columns: 1fr;
   }
 }

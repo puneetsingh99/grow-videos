@@ -17,23 +17,23 @@ export const Login = () => {
   const focusInput = useRef(null);
 
   useEffect(() => {
-    isUserLoggedIn && navigate(state?.from || "/");
     focusInput.current && focusInput.current.focus();
-  }, [focusInput, isUserLoggedIn]);
+    isUserLoggedIn && navigate(state?.from || "/");
+  }, [isUserLoggedIn]);
 
   return (
     <>
       <NavBar />
       <main className="main-container">
         <section className="login-container">
-          <h1 className="text-2xl mb-2 text-gray-200">Log in</h1>
+          <h1 className="text-2xl mb-2 text-gray-800">Log in</h1>
           <form onSubmit={login.onLoginClicked}>
             {
               <p className="mb-2 text-red-500">
                 {status === "error" ? `• ${error.message}` : ""}
               </p>
             }
-            <p className="mb-2 text-gray-300">Email</p>
+            <p className="mb-2 text-gray-700">Email</p>
             <input
               onChange={login.setEmail}
               ref={focusInput}
@@ -41,7 +41,7 @@ export const Login = () => {
               type="text"
               className="txt-input"
             />
-            <p className="mb-2 text-gray-300">Password</p>
+            <p className="mb-2 text-gray-700">Password</p>
             <input
               type="password"
               placeholder="Password"
@@ -49,22 +49,25 @@ export const Login = () => {
               className="txt-input"
             />
             <input
-              className="button button-primary mb-4"
+              className="btn btn-login mb-4 text-white"
               type="submit"
               value={`${status === "pending" ? "Logging in..." : "Log in"}`}
             />
           </form>
           <button
-            className="button button-primary mb-4"
+            className="btn btn-login text-white"
             onClick={login.onGuestLoginClicked}
           >
             {status === "pending" ? "Logging in..." : "Log in as a guest"}
           </button>
 
           <div className="flex-c">
-            <p className="mr-2 text-gray-300">Don't have an account?</p>
-            <Link to={ROUTE_SIGN_UP} className="text-link font-bold">
-              <p>Sign up</p>
+            <p className="mr-2 text-gray-600 mt-4">Don't have an account?</p>
+            <Link
+              to={ROUTE_SIGN_UP}
+              className="text-link font-bold text-blue-600"
+            >
+              <p className={`mt-4`}>Sign up</p>
             </Link>
           </div>
         </section>

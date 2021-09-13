@@ -14,7 +14,6 @@ export const filterVideos = (allVideos, currPlaylist, user) => {
   if (predefinedPlaylists.includes(currPlaylist)) {
     return allVideos.filter((video) => video.category === currPlaylist);
   }
-  console.log("final filter");
 
   const playlist = user.playlists.filter(
     (playlist) => playlist.playlistName === currPlaylist

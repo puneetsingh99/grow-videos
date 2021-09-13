@@ -12,17 +12,14 @@ const initialState = {
 
 export const UserProvider = ({ children }) => {
   const { userId } = useAuth();
-  console.log(userId);
   const [user, userDispatch] = useReducer(userReducer, initialState);
-  console.log(user);
 
   useEffect(() => {
     (async function () {
       const response = await getUser(userId);
 
       if (response.user) {
-        const { user } = response;
-        return userDispatch({ type: "SET_USER", payload: user });
+        return userDispatch({ type: "SET_USER", payload: response.user });
       }
     })();
   }, []);

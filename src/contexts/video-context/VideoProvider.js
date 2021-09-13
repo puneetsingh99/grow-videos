@@ -2,7 +2,6 @@ import { createContext, useContext, useEffect } from "react";
 import { useState } from "react";
 import { useUser } from "../user-context/UserProvider";
 import { filterVideos } from "./utils/filterVideos";
-import { filterBySearchKeywords } from "./utils/filterBySearchKeywords";
 import { getAllVideos } from "./utils/getAllVideos";
 
 const VideoContext = createContext();
@@ -14,7 +13,7 @@ const allVideosInitialState = {
 };
 
 export const VideoProvider = ({ children }) => {
-  const [currPlaylist, setCurrPlaylist] = useState("All");
+  const [currPlaylist, setCurrPlaylist] = useState("Home");
   const [searchKeyword, setSearchKeyword] = useState("");
   const [allVideos, setAllVideos] = useState(allVideosInitialState);
   const { user } = useUser();
@@ -26,6 +25,7 @@ export const VideoProvider = ({ children }) => {
 
       if (response.videoList) {
         const { videoList } = response;
+        console.log(videoList);
         return setAllVideos({ status: "succeeded", videoList, error: null });
       }
 
@@ -37,10 +37,7 @@ export const VideoProvider = ({ children }) => {
     })();
   }, []);
 
-  const filteredVideos = filterBySearchKeywords(
-    filterVideos(allVideos.videoList, currPlaylist, user),
-    searchKeyword
-  );
+  const filteredVideos = filterVideos(allVideos.videoList, currPlaylist, user);
 
   const providerValues = {
     filteredVideos,

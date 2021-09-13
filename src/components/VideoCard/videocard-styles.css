@@ -1,5 +1,5 @@
 .videocard {
-  width: 225px;
+  width: 250px;
   cursor: pointer;
 }
 
@@ -17,24 +17,40 @@
   -o-border-radius: 1rem;
 }
 
+.video-info-container {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+}
+
+.video-info-container img {
+  max-width: 2rem;
+  border-radius: 100%;
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -ms-border-radius: 100%;
+  -o-border-radius: 100%;
+}
+
 .video-title {
   font-size: 1rem;
-  line-height: 1.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .video-title:hover {
   text-decoration: none;
 }
 
-.truncate-overflow {
-  position: relative;
-  max-height: 3rem;
-  overflow: hidden;
-}
-
 @media (max-width: 640px) {
   .videocard {
+    max-width: 340px;
     width: 100%;
     margin: 0rem auto 2rem auto;
+  }
+
+  .video {
+    width: 100%;
   }
 }

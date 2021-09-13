@@ -1,18 +1,25 @@
 .navbar {
   width: 100%;
-  background-color: var(--clr-dark-3);
-  border-bottom: solid 1px var(--clr-dark-2);
+  background-color: white;
+  border-bottom: solid 1px #d1d5db;
   position: sticky;
   top: 0px;
   opacity: 1;
 }
 
 .navbar-container {
-  grid-column-gap: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
   align-items: center;
   width: 80%;
   margin: auto;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
+}
+
+.brand-name {
+  color: black;
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 @media (max-width: 640px) {
