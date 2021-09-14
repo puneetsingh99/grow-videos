@@ -18,6 +18,8 @@ export const VideoProvider = ({ children }) => {
   const [allVideos, setAllVideos] = useState(allVideosInitialState);
   const { user } = useUser();
 
+  console.log(allVideos);
+
   useEffect(() => {
     (async function () {
       setAllVideos((currState) => ({ ...currState, status: "loading" }));
@@ -25,7 +27,6 @@ export const VideoProvider = ({ children }) => {
 
       if (response.videoList) {
         const { videoList } = response;
-        console.log(videoList);
         return setAllVideos({ status: "succeeded", videoList, error: null });
       }
 

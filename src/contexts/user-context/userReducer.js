@@ -6,7 +6,7 @@ export const userReducer = (state, action) => {
   switch (action.type) {
     case "SET_USER":
       const { name, playlists } = action.payload;
-      return { name, playlists };
+      return { ...state, name, playlists };
 
     case "CREATE_PLAYLIST":
       const { playlistName } = action.payload;
@@ -55,6 +55,13 @@ export const userReducer = (state, action) => {
           action.payload.videoId
         ),
       };
+
+    case "SET_STATUS":
+      return { ...state, status: action.payload };
+
+    case "SET_ERROR":
+      return { ...state, error: action.payload };
+
     default:
       return state;
   }

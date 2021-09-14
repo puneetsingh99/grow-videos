@@ -9,7 +9,7 @@ export const PrivateRoute = ({ path, element, ...props }) => {
   let loginUser = !isUserLoggedIn;
 
   if (isUserLoggedIn) {
-    const loginObject = localStorage.getItem("ecomLogin");
+    const loginObject = localStorage.getItem("videoLibraryLogin");
 
     if (loginObject) {
       const token = JSON.parse(loginObject).token;

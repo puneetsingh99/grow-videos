@@ -1,7 +1,7 @@
 import { NavBar } from "../../../components";
 import { useRef, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { ROUTE_SIGN_UP } from "../../../utils/app-routes";
+import { ROUTE_SIGN_UP } from "../../../utils/appRoutes";
 import { useLogin } from "./useLogin";
 import { useAuth } from "../../../contexts";
 import "../form-styles.css";
@@ -18,8 +18,7 @@ export const Login = () => {
 
   useEffect(() => {
     focusInput.current && focusInput.current.focus();
-    isUserLoggedIn && navigate(state?.from || "/");
-  }, [isUserLoggedIn]);
+  }, []);
 
   return (
     <>

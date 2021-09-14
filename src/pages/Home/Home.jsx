@@ -3,11 +3,14 @@ import { VideoList } from "../../components/VideoList/VideoList";
 import { VideoListHeader } from "../../components/VideoList/VideoListHeader";
 import { SideBar } from "./components/SideBar/SideBar";
 import "./home-page-styles.css";
-import { useAuth, useUser } from "../../contexts";
+import { useVideos } from "../../contexts";
+import { toast } from "react-toastify";
+import { toastConfig } from "../../utils/toastConfig";
+import { Loader } from "../../components/Loader";
 
 export const Home = () => {
-  const auth = useAuth();
-  const { user } = useUser();
+  const { filteredVideos, allVideos } = useVideos();
+  const { status, error } = allVideos;
 
   return (
     <>
@@ -16,7 +19,11 @@ export const Home = () => {
         <SideBar />
         <div className={`video-container`}>
           <VideoListHeader />
-          <VideoList />
+          {status === "loading" && <Loader />}
+          {status === "succeeded" && (
+            <VideoList filteredVideos={filteredVideos} />
+          )}
+          {status === "error" && toast.error(error, toastConfig)}
         </div>
       </main>
     </>

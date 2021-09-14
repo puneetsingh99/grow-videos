@@ -1,5 +1,6 @@
 @import url("https://spaceuicss.netlify.app/main.css");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&display=swap");
+@import url("react-toastify/dist/ReactToastify.min.css");
 
 * {
   margin: 0;
@@ -17,6 +18,11 @@
   --txt-light-1: #374151;
   --txt-light-2: #1f2937;
   --txt-light-3: #111827;
+
+  --toastify-color-dark: #006dfb;
+  --toastify-color-success: var(--green-500);
+  --toastify-color-warning: var(--yellow-500);
+  --toastify-color-error: var(--red-500);
 }
 
 body,

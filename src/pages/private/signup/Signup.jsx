@@ -1,14 +1,12 @@
 import { NavBar } from "../../../components";
 import { useRef, useEffect } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
-import { ROUTE_LOGIN } from "../../../utils/app-routes";
+import { Link } from "react-router-dom";
+import { ROUTE_LOGIN } from "../../../utils/appRoutes";
 import { useAuth } from "../../../contexts";
 import { useSignup } from "./useSignup";
 import "../form-styles.css";
 
 export const Signup = () => {
-  const navigate = useNavigate();
-  const { state } = useLocation();
   const { isUserLoggedIn } = useAuth();
 
   const signup = useSignup();
@@ -17,7 +15,6 @@ export const Signup = () => {
   const focusInput = useRef(null);
 
   useEffect(() => {
-    isUserLoggedIn && navigate(state?.from || "/");
     focusInput.current && focusInput.current.focus();
   }, [focusInput, isUserLoggedIn]);
 
