@@ -1,0 +1,30 @@
+.video-player {
+  width: 80%;
+  margin: auto;
+  margin-top: 1rem;
+  height: 90vh;
+}
+
+.input-text {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.create-new-playlist {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: solid 1px var(--gray-100);
+  align-items: center;
+}
+
+.list {
+  list-style: none;
+}
+
+@media (max-width: 640px) {
+  .video-player {
+    width: 95%;
+    height: auto;
+  }
+}
