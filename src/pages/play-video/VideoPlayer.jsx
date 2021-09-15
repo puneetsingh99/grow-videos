@@ -4,7 +4,6 @@ import ReactPlayer from "react-player";
 import { NavBar, VideoInfo } from "../../components";
 import { useParams } from "react-router-dom";
 import { getVideo } from "../../contexts/video-context/utils/getVideo";
-import { Loader } from "../../components/Loader";
 
 const initialState = {
   status: "idle",
