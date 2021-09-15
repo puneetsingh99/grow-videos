@@ -4,6 +4,7 @@ import ReactPlayer from "react-player";
 import { NavBar, VideoInfo } from "../../components";
 import { useParams } from "react-router-dom";
 import { getVideo } from "../../contexts/video-context/utils/getVideo";
+import { Loader } from "../../components/Loader";
 
 const initialState = {
   status: "idle",
@@ -39,8 +40,11 @@ export const VideoPlayer = () => {
   return (
     <main className={`video-player-page`}>
       <NavBar />
+      {video.status === "loading" && <Loader />}
       <section className={`video-player`}>
-        <ReactPlayer url={videoUrl} controls width="100%" height="100%" />
+        <div className="react-player">
+            <ReactPlayer url={videoUrl} controls width="100%" height="100%" />
+        </div>
         <div className="video-info-container">
           {video.status === "succeeded" && (
             <VideoInfo videoId={videoId} video={video.video} />

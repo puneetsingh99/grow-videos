@@ -5,6 +5,6 @@ export { Avatar } from "./avatar/Avatar";
 export { NavPill } from "./nav/nav-pill/NavPill";
 export { NavPillList } from "./nav/nav-pill/NavPillList";
 export { VideoCard } from "./VideoCard/VideoCard";
-export { VideoInfo } from "./VideoInfo/VideoInfo";
+export { VideoInfo } from "../pages/play-video/VideoInfo/VideoInfo";
 export { AddToPlaylist } from "./playlist/AddToPlaylist";
 export { PrivateRoute } from "./PrivateRoute";
