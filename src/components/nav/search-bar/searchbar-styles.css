@@ -3,7 +3,7 @@
   background-color: var(--clr-dark-3);
   display: flex;
   align-items: center;
-  width: 50%;
+  width: 100%;
   overflow: hidden;
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -39,8 +39,14 @@
   outline: transparent;
 }
 
+.search-result__message {
+  font-weight: normal;
+  height: 100px;
+  color: var(--gray-400);
+}
+
 @media (max-width: 640px) {
   .searchbar {
-    width: 80%;
+    width: 100%;
   }
 }
