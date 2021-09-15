@@ -1,5 +1,5 @@
 import "./styles.css";
-import { Home, VideoPlayer, Login, Signup } from "./pages";
+import { HomePage, VideoPlayer, Login, Signup } from "./pages";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { PrivateRoute } from "./components";
 import { History } from "./pages/private/History/History";
@@ -27,7 +27,7 @@ export default function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path={ROUTE_HOME} end element={<Home />} />
+        <Route path={ROUTE_HOME} end element={<HomePage />} />
         <Route path={ROUTE_PLAY_VIDEO} end element={<VideoPlayer />} />
         <Route
           path={ROUTE_LOGIN}
