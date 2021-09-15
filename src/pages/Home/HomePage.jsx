@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 import { toastConfig } from "../../utils/toastConfig";
 import { Loader } from "../../components/Loader";
 
-export const Home = () => {
+export const HomePage = () => {
   const { filteredVideos, allVideos } = useVideos();
   const { status, error } = allVideos;
 
