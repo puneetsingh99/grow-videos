@@ -1,0 +1,39 @@
+.homepage-main {
+  width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  grid-gap: 1rem;
+  height: 90vh;
+}
+
+.main,
+.navpill-container {
+  width: 100%;
+}
+.main {
+  background-color: var(--clr-dark-3);
+  min-height: 100vh;
+}
+
+.video-container {
+  height: 90vh;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.navpill-container {
+  margin: auto;
+  background-color: var(--white);
+  border-bottom: solid 1px var(--gray-100);
+  position: fixed;
+  padding-right: 1rem;
+}
+
+@media (max-width: 640px) {
+  .homepage-main {
+    width: 100%;
+    padding: 1.5rem 0rem;
+    grid-template-columns: 1fr;
+  }
+}

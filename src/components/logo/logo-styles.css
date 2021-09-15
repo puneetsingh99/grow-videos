@@ -1,0 +1,19 @@
+.branding {
+  display: flex;
+}
+
+.logo {
+  color: #006dfb;
+  font-size: 2rem;
+  margin-right: 0.5rem;
+}
+
+.brand-name {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .brand-name {
+    display: none;
+  }
+}

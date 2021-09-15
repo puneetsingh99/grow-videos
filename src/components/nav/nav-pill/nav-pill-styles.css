@@ -1,0 +1,40 @@
+.nav-pill-list {
+  list-style: none;
+  display: flex;
+  padding: 1rem;
+  background-color: var(--clr-dark-3);
+  padding-right: 2rem;
+  width: 100%;
+  margin: auto;
+  overflow: scroll;
+  gap: 1rem;
+}
+
+.nav-pill-list::-webkit-scrollbar {
+  display: none;
+}
+
+.nav-pill {
+  border: solid 1px var(--clr-dark-2);
+  padding: 0.5rem 1rem;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--txt-light-2);
+  background-color: var(--clr-dark-2);
+  width: max-content;
+}
+
+.nav-pill:hover {
+  background-color: var(--clr-dark-1);
+}
+
+.selected-playlist {
+  background-color: var(--gray-500);
+  color: var(--white);
+}
+
+.selected-playlist:hover {
+  background-color: var(--gray-700);
+  color: var(--white);
+}
