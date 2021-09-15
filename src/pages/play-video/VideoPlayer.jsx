@@ -3,8 +3,8 @@ import "./video-player-page-styles.css";
 import ReactPlayer from "react-player";
 import { NavBar, VideoInfo } from "../../components";
 import { useParams } from "react-router-dom";
-import { useVideos } from "../../contexts";
 import { getVideo } from "../../contexts/video-context/utils/getVideo";
+import { Loader } from "../../components/Loader";
 
 const initialState = {
   status: "idle",
@@ -12,7 +12,7 @@ const initialState = {
   error: null,
 };
 
-export const VideoPlayerPage = () => {
+export const VideoPlayer = () => {
   const { videoId } = useParams();
 
   const [video, setVideo] = useState(initialState);
@@ -42,14 +42,12 @@ export const VideoPlayerPage = () => {
       <NavBar />
       <section className={`video-player`}>
         <ReactPlayer url={videoUrl} controls width="100%" height="100%" />
+        <div className="video-info-container">
+          {video.status === "succeeded" && (
+            <VideoInfo videoId={videoId} video={video.video} />
+          )}
+        </div>
       </section>
-      <div className="video-info-container">
-        {video.status === "succeeded" ? (
-          <VideoInfo videoId={videoId} video={video.video} />
-        ) : (
-          <h1>Loading...</h1>
-        )}
-      </div>
     </main>
   );
 };

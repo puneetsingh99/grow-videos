@@ -1,13 +1,12 @@
 .video-info {
   padding: 1rem;
-  border-bottom: solid 1px var(--clr-dark-2);
-  margin-bottom: 1rem;
+  width: 100%;
 }
 
 .title {
-  font-size: 1.25rem;
-  font-weight: 550;
-  margin-bottom: 1rem;
+  font-size: 1.125rem;
+  font-weight: normal;
+  margin-bottom: 0.5rem;
 }
 
 .channel-avatar {
@@ -18,13 +17,10 @@
   display: flex;
   align-items: center;
   width: max-content;
-  margin-bottom: 0.5rem;
-  padding: 1rem 0rem;
 }
 
 .title-container {
   padding-bottom: 0.25rem;
-  border-bottom: solid 1px var(--clr-dark-2);
 }
 
 .add-to-playlist {
@@ -41,15 +37,15 @@
 .add-to-playlist p {
   font-size: 1rem;
   margin-left: 1rem;
-  font-weight: 550;
 }
 
-.desc {
-  width: 80%;
+.action-buttons {
+  display: flex;
+  gap: 3rem;
 }
 
 @media (max-width: 640px) {
-  .desc {
-    width: 95%;
+  .action-buttons {
+    gap: 1rem;
   }
 }

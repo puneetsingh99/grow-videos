@@ -66,7 +66,11 @@ export const SideBar = () => {
               pathname === ROUTE_LIBRARY && "highlighted"
             }`}
           >
-            <BsCollectionPlay size={22} />
+            {pathname === "/library" ? (
+              <BsCollectionPlayFill size={22} />
+            ) : (
+              <BsCollectionPlay size={22} />
+            )}
             <p>Library</p>
           </li>
         </Link>

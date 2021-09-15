@@ -15,7 +15,7 @@ export const SearchResults = ({ searchResults }) => {
       {status === "succeeded" && results.length > 0 && (
         <ul>
           {results.map((video) => (
-            <Link className={`text-link`} to={getPlayVideoRoute(video._id)}>
+            <Link className={`text-link`} to={getPlayVideoRoute(video.videoId)}>
               <li key={video._id} className={`search__result`}>
                 {video.title}
               </li>
