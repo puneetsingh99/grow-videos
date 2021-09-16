@@ -7,12 +7,12 @@ export const addRemoveVideoHandler = (
   if (!isChecked) {
     userDispatch({
       type: "ADD_TO_PLAYLIST",
-      payload: { playlistName, videoId }
+      payload: { playlistName, videoId },
     });
     return;
   }
   userDispatch({
     type: "REMOVE_FROM_PLAYLIST",
-    payload: { playlistName, videoId }
+    payload: { playlistName, videoId },
   });
 };

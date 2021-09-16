@@ -1,5 +1,4 @@
 import { createContext, useContext, useState } from "react";
-// import { existingPlaylist } from "../../data/playlist.data";
 
 const PlaylistContext = createContext();
 

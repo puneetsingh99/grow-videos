@@ -43,7 +43,7 @@ export const VideoPlayer = () => {
       {video.status === "loading" && <Loader />}
       <section className={`video-player`}>
         <div className="react-player">
-            <ReactPlayer url={videoUrl} controls width="100%" height="100%" />
+          <ReactPlayer url={videoUrl} controls width="100%" height="100%" />
         </div>
         <div className="video-info-container">
           {video.status === "succeeded" && (

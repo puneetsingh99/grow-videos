@@ -29,7 +29,7 @@ export const userReducer = (state, action) => {
         playlists: createPlaylist(state.playlists, playlistName),
       };
 
-    case "DELETE_PLAYLIST":
+    case "REMOVE_PLAYLIST":
       return {
         ...state,
         playlists: state.playlists.filter(
@@ -43,7 +43,7 @@ export const userReducer = (state, action) => {
         playlists: addToPlaylist(
           state.playlists,
           action.payload.playlistName,
-          action.payload.videoId
+          action.payload.video
         ),
       };
     case "REMOVE_FROM_PLAYLIST":

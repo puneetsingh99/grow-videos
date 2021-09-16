@@ -1,5 +1,5 @@
-// const API_ROOT = `http://localhost:5000`;
-const API_ROOT = `https://salty-savannah-53232.herokuapp.com`;
+const API_ROOT = `http://localhost:5000`;
+// const API_ROOT = `https://salty-savannah-53232.herokuapp.com`;
 
 export const API_ALL_VIDEOS = `${API_ROOT}/videos`;
 export const apiGetVideo = (videoId) => `${API_ALL_VIDEOS}/${videoId}`;

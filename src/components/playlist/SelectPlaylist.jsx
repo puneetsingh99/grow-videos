@@ -1,28 +1,32 @@
 import { useState } from "react";
 import { DeleteSvg } from "../../assets";
-import { useUser } from "../../contexts";
-import { addRemoveVideoHandler } from "./addRemoveVideoHandler";
+import { useUser, useVideos } from "../../contexts";
 import "./add-to-playlist.css";
 
-export const SelectPlaylist = ({ playlistName, videoId, isAlreadyPresent }) => {
-  const { userDispatch } = useUser();
-  const [isChecked, setIsChecked] = useState(() =>
-    isAlreadyPresent ? true : false
-  );
+export const SelectPlaylist = ({ playlistName, videoId }) => {
+  const {
+    userDispatch,
+    removePlaylist,
+    addToPlaylist,
+    removeFromPlaylist,
+    getPlaylists,
+  } = useUser();
+
+  const [isChecked, setIsChecked] = useState(() => false);
 
   return (
     <article className={`playlist-selector`}>
-      <div
-        className="select-playlist"
-        onClick={() => {
-          addRemoveVideoHandler(isChecked, userDispatch, playlistName, videoId);
-          setIsChecked((currState) => !currState);
-        }}
-      >
+      <div className="select-playlist">
         <input
           type="checkbox"
           name="select-playlist-radio"
           checked={isChecked}
+          onChange={() => {
+            isChecked
+              ? removeFromPlaylist(playlistName, videoId)
+              : addToPlaylist(playlistName, videoId);
+            setIsChecked((currState) => !currState);
+          }}
           id={playlistName}
           className={`checkbox`}
         />
@@ -31,9 +35,7 @@ export const SelectPlaylist = ({ playlistName, videoId, isAlreadyPresent }) => {
 
       <div
         className={`delete-playlist`}
-        onClick={() =>
-          userDispatch({ type: "DELETE_PLAYLIST", payload: { playlistName } })
-        }
+        onClick={() => removePlaylist(playlistName)}
       >
         <DeleteSvg />
       </div>

@@ -1,3 +1,6 @@
+import { toast } from "react-toastify";
+import { toastConfig } from "../../utils/toastConfig";
+
 export const addToPlaylist = (playlists, playlistName, videoId) => {
   const playlist = playlists.find(
     (playlist) => playlist.playlistName === playlistName
@@ -5,7 +8,7 @@ export const addToPlaylist = (playlists, playlistName, videoId) => {
 
   const videoAlreadyExists = playlist.videos.find((video) => video === videoId);
   if (videoAlreadyExists) {
-    console.log("The video already exists in the playlist");
+    toast.error("Video already exists in the playlist", toastConfig);
     return playlists;
   }
 
