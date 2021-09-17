@@ -35,8 +35,6 @@ export const UserProvider = ({ children }) => {
   const { userId, isUserLoggedIn } = useAuth();
   const [user, userDispatch] = useReducer(userReducer, initialState);
 
-  console.log(user);
-
   const [playlistStatus, setPlaylistStatus] = useState("idle");
 
   const createPlaylist = async (playlistName) => {
@@ -116,18 +114,37 @@ export const UserProvider = ({ children }) => {
         );
       }
 
-      const response = await toast.promise(
-        axios.post(apiGetUser(userId), {
+      if (
+        !["watch later", "watch history", "liked videos"].includes(
+          playlistName.trim().toLowerCase()
+        )
+      ) {
+        await toast.promise(
+          axios.post(apiGetUser(userId), {
+            operation: "addToPlaylist",
+            playlistName,
+            videoId,
+          }),
+          addToPlaylistStates,
+          toastConfig
+        );
+      } else {
+        await axios.post(apiGetUser(userId), {
           operation: "addToPlaylist",
           playlistName,
           videoId,
-        }),
-        addToPlaylistStates,
-        toastConfig
-      );
+        });
+      }
+
+      playlistName === "liked videos" &&
+        toast.success("Video liked", toastConfig);
+
+      playlistName === "watch later" &&
+        toast.success("Added to watch later", toastConfig);
     } catch (error) {
-      console.error(error.response.data);
-      toast.error(error.response.data.message, toastConfig);
+      console.log(error);
+      console.error(error?.response?.data);
+      toast.error(error?.response?.data?.message, toastConfig);
     }
   };
 
@@ -145,23 +162,33 @@ export const UserProvider = ({ children }) => {
         payload: { playlistName, videoId },
       });
 
-      const response = await toast.promise(
-        axios.post(apiGetUser(userId), {
+      if (
+        !["watch later", "watch history", "liked videos"].includes(
+          playlistName.trim().toLowerCase()
+        )
+      ) {
+        await toast.promise(
+          axios.post(apiGetUser(userId), {
+            operation: "removeFromPlaylist",
+            playlistName,
+            videoId,
+          }),
+          removeFromPlaylistStates,
+          toastConfig
+        );
+      } else {
+        await axios.post(apiGetUser(userId), {
           operation: "removeFromPlaylist",
           playlistName,
           videoId,
-        }),
-        removeFromPlaylistStates,
-        toastConfig
-      );
-
-      if (!response.data.updatedUser) {
-        userDispatch({
-          type: "ADD_TO_PLAYLIST",
-          payload: { playlistName, videoId },
         });
-        return toast.error("Could not remove from playlist", toastConfig);
       }
+
+      playlistName === "liked videos" &&
+        toast.success("Video unliked", toastConfig);
+
+      playlistName === "watch later" &&
+        toast.success("Removed from watch later", toastConfig);
     } catch (error) {
       console.error(error.message);
       return toast.error(error.message, toastConfig);

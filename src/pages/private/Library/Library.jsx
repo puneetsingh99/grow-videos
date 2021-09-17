@@ -13,7 +13,7 @@ import { Loader } from "../../../components/Loader";
 const defaultPlaylists = ["liked videos", "watch history", "watch later"];
 
 export const Library = () => {
-  const { user, getPlaylists } = useUser();
+  const { getPlaylists } = useUser();
   const [myPlaylists, setMyPlaylists] = useState({
     status: "idle",
     playlists: null,

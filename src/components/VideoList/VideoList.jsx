@@ -1,5 +1,6 @@
 import { VideoCard } from "../VideoCard/VideoCard";
 import "./video-list-styles.css";
+import { v4 as uuidv4 } from "uuid";
 
 export const VideoList = ({ filteredVideos }) => {
   const length = filteredVideos.length;
@@ -7,7 +8,7 @@ export const VideoList = ({ filteredVideos }) => {
     <ul className={`video-list`}>
       {length > 0 ? (
         filteredVideos.map((video) => (
-          <li key={video._id} className={`video`}>
+          <li key={uuidv4()} className={`video`}>
             <VideoCard video={video} />
           </li>
         ))

@@ -5,6 +5,7 @@ import { NavBar, VideoInfo } from "../../components";
 import { useParams } from "react-router-dom";
 import { getVideo } from "../../contexts/video-context/utils/getVideo";
 import { Loader } from "../../components/Loader";
+import { useUser } from "../../contexts";
 
 const initialState = {
   status: "idle",
@@ -14,6 +15,8 @@ const initialState = {
 
 export const VideoPlayer = () => {
   const { videoId } = useParams();
+
+  const { addToPlaylist } = useUser();
 
   const [video, setVideo] = useState(initialState);
 
@@ -43,7 +46,13 @@ export const VideoPlayer = () => {
       {video.status === "loading" && <Loader />}
       <section className={`video-player`}>
         <div className="react-player">
-          <ReactPlayer url={videoUrl} controls width="100%" height="100%" />
+          <ReactPlayer
+            url={videoUrl}
+            controls
+            width="100%"
+            height="100%"
+            onStart={() => addToPlaylist("watch history", videoId)}
+          />
         </div>
         <div className="video-info-container">
           {video.status === "succeeded" && (

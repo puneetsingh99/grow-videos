@@ -1,13 +1,13 @@
 import { MdPlaylistAdd } from "react-icons/md";
 import { AiTwotoneLike, AiOutlineLike } from "react-icons/ai";
 import { IoTimeOutline, IoTimeSharp } from "react-icons/io5";
-import { useAuth, useUser } from "../../contexts";
 import { useNavigate, useParams } from "react-router-dom";
 import {
   getPlayVideoRoute,
   ROUTE_LOGIN,
   ROUTE_PLAY_VIDEO,
 } from "../../utils/appRoutes";
+import { useAuth } from "../../contexts";
 
 export const ActionButtons = ({ setShowAddToPlaylistModal }) => {
   const { isUserLoggedIn } = useAuth();
