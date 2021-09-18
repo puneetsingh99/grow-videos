@@ -6,6 +6,7 @@ import { useUser } from "../../../contexts";
 import { IoTimeSharp } from "react-icons/io5";
 import { useState, useEffect } from "react";
 import { Loader } from "../../../components/Loader";
+import { NavBarMobile } from "../../../components/nav/nav-bar/NavBarMobile";
 
 export const WatchLater = () => {
   const { getPlaylists } = useUser();
@@ -73,6 +74,7 @@ export const WatchLater = () => {
           {playlists && <VideoList filteredVideos={playlists[0].videos} />}
         </div>
       </main>
+      <NavBarMobile />
     </>
   );
 };

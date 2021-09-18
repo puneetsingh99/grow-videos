@@ -7,6 +7,7 @@ import { useVideos } from "../../contexts";
 import { toast } from "react-toastify";
 import { toastConfig } from "../../utils/toastConfig";
 import { Loader } from "../../components/Loader";
+import { NavBarMobile } from "../../components/nav/nav-bar/NavBarMobile";
 
 export const HomePage = () => {
   const { filteredVideos, allVideos } = useVideos();
@@ -26,6 +27,7 @@ export const HomePage = () => {
           {status === "error" && toast.error(error, toastConfig)}
         </div>
       </main>
+      <NavBarMobile />
     </>
   );
 };

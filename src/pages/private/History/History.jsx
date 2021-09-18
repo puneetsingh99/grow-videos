@@ -2,11 +2,12 @@ import { NavBar } from "../../../components";
 import { VideoList } from "../../../components/VideoList/VideoList";
 import { SideBar } from "../../home/components/SideBar/SideBar";
 import "../../home/home-page-styles.css";
-import { useAuth, useUser } from "../../../contexts";
+import { useUser } from "../../../contexts";
 import { AiOutlineHistory } from "react-icons/ai";
 import { useState, useEffect } from "react";
 
 import { Loader } from "../../../components/Loader";
+import { NavBarMobile } from "../../../components/nav/nav-bar/NavBarMobile";
 
 export const History = () => {
   const { getPlaylists } = useUser();
@@ -74,6 +75,7 @@ export const History = () => {
           {playlists && <VideoList filteredVideos={playlists[0].videos} />}
         </div>
       </main>
+      <NavBarMobile />
     </>
   );
 };

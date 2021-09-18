@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import { getVideo } from "../../contexts/video-context/utils/getVideo";
 import { Loader } from "../../components/Loader";
 import { useUser } from "../../contexts";
+import { NavBarMobile } from "../../components/nav/nav-bar/NavBarMobile";
 
 const initialState = {
   status: "idle",
@@ -60,6 +61,7 @@ export const VideoPlayer = () => {
           )}
         </div>
       </section>
+      <NavBarMobile />
     </main>
   );
 };

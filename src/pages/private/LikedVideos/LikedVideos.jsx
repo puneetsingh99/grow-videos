@@ -6,6 +6,7 @@ import { useUser } from "../../../contexts";
 import { AiTwotoneLike } from "react-icons/ai";
 import { useEffect, useState } from "react";
 import { Loader } from "../../../components/Loader";
+import { NavBarMobile } from "../../../components/nav/nav-bar/NavBarMobile";
 
 export const LikedVideos = () => {
   const { getPlaylists } = useUser();
@@ -73,6 +74,7 @@ export const LikedVideos = () => {
           {playlists && <VideoList filteredVideos={playlists[0].videos} />}
         </div>
       </main>
+      <NavBarMobile />
     </>
   );
 };
