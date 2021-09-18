@@ -7,10 +7,6 @@ import { useAuth } from "../../../contexts";
 import "../form-styles.css";
 
 export const Login = () => {
-  const navigate = useNavigate();
-  const { state } = useLocation();
-  const { isUserLoggedIn } = useAuth();
-
   const login = useLogin();
   const { status, error } = login.loginState;
 

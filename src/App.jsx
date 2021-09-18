@@ -19,8 +19,6 @@ import {
 } from "./utils/appRoutes";
 import { ToastContainer } from "react-toastify";
 
-import { toast } from "react-toastify";
-
 export default function App() {
   const { isUserLoggedIn } = useAuth();
 

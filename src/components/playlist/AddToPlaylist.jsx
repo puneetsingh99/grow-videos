@@ -4,7 +4,8 @@ import { addToPlaylistHandler } from "./addToPlaylistHandler";
 import { useUser } from "../../contexts";
 import { useState } from "react";
 import { isSafePlaylist } from "../../contexts/user-context/utils";
-import { useVideos } from "../../contexts";
+import { toast } from "react-toastify";
+import { toastConfig } from "../../utils/toastConfig";
 
 export const AddToPlaylist = ({ toggleModal, setToggle, videoId }) => {
   const { user, createPlaylist, playlistStatus } = useUser();
@@ -27,6 +28,14 @@ export const AddToPlaylist = ({ toggleModal, setToggle, videoId }) => {
     return videoExists;
   };
 
+  const isPlaylistPresent = (playlistName) => {
+    return user.playlists.find(
+      (playlist) =>
+        playlist.playlistName.trim().toLowerCase() ===
+        playlistName.trim().toLowerCase()
+    );
+  };
+
   return (
     <main
       className={`modal-container ${toggleModal && `show-modal`}`}
@@ -44,7 +53,20 @@ export const AddToPlaylist = ({ toggleModal, setToggle, videoId }) => {
             className={`button button-primary btn-create-playlist`}
             disabled={playlistStatus === "loading"}
             onClick={() => {
-              createPlaylist(playlistName);
+              if (isPlaylistPresent(playlistName)) {
+                const protectedPlaylist = [
+                  "liked videos",
+                  "watch later",
+                  "watch history",
+                ].includes(playlistName.trim().toLowerCase());
+
+                protectedPlaylist
+                  ? toast.error("Protected playlist name", toastConfig)
+                  : toast.error("Playlist already exists", toastConfig);
+              } else {
+                createPlaylist(playlistName);
+              }
+
               setPlaylistName(() => "");
             }}
           >
