@@ -59,16 +59,13 @@
 .existing-playlists {
   padding: 1rem;
   height: 220px;
-  overflow: scroll;
+  overflow-y: scroll;
   border-radius: 10px;
 }
 
-.existing-playlists::-webkit-scrollbar {
-  display: none;
-}
-
-.existing-playlists::-webkit-scrollbar {
-  overflow: hidden;
+.existing-playlists {
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .no-playlists-container {

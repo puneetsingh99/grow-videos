@@ -89,7 +89,7 @@ export const SideBar = () => {
               pathname === ROUTE_LIKED_VIDEOS && "highlighted"
             }`}
           >
-            {currPlaylist === "Liked videos" ? (
+            {pathname === "/likedvideos" ? (
               <AiTwotoneLike size={23} />
             ) : (
               <AiOutlineLike size={23} />
@@ -103,7 +103,7 @@ export const SideBar = () => {
               pathname === ROUTE_WATCH_LATER && "highlighted"
             }`}
           >
-            {currPlaylist === "Watch later" ? (
+            {pathname === "/watchlater" ? (
               <IoTimeSharp size={23} />
             ) : (
               <IoTimeOutline size={23} />
