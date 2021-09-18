@@ -20,8 +20,6 @@ export const AddToPlaylist = ({ toggleModal, setToggle, videoId }) => {
       const playlistToSearch = userPlaylists.find(
         (playlist) => playlist.playlistName === playlistName
       );
-      console.log(userPlaylists);
-      console.log(playlistToSearch);
       videoExists = playlistToSearch.videos.find(
         (video) => video.videoId === videoId
       );
