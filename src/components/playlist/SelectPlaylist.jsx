@@ -3,16 +3,12 @@ import { DeleteSvg } from "../../assets";
 import { useUser, useVideos } from "../../contexts";
 import "./add-to-playlist.css";
 
-export const SelectPlaylist = ({ playlistName, videoId }) => {
-  const {
-    userDispatch,
-    removePlaylist,
-    addToPlaylist,
-    removeFromPlaylist,
-    getPlaylists,
-  } = useUser();
+export const SelectPlaylist = ({ playlistName, videoId, isVideoPresent }) => {
+  const { removePlaylist, addToPlaylist, removeFromPlaylist } = useUser();
 
-  const [isChecked, setIsChecked] = useState(() => false);
+  const [isChecked, setIsChecked] = useState(() =>
+    isVideoPresent(playlistName, videoId)
+  );
 
   return (
     <article className={`playlist-selector`}>

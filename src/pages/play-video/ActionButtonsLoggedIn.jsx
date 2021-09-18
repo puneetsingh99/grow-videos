@@ -15,7 +15,7 @@ import { toastConfig } from "../../utils/toastConfig";
 const defaultPlaylists = ["liked videos", "watch history", "watch later"];
 
 export const ActionButtonsLoggedIn = ({ setShowAddToPlaylistModal }) => {
-  const { isUserLoggedIn, userId } = useAuth();
+  const { isUserLoggedIn } = useAuth();
   const { videoId } = useParams();
   const navigate = useNavigate();
 
