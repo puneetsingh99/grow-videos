@@ -22,7 +22,7 @@ export const HomePage = () => {
         <SideBar />
         <div className={`video-container`}>
           <VideoListHeader />
-          <NavPill />
+          {status === "succeeded" && <NavPill />}
           {status === "loading" && <Loader />}
           {status === "succeeded" && (
             <VideoList filteredVideos={filteredVideos} />
