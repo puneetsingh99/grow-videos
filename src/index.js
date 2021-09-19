@@ -5,9 +5,10 @@ import {
   VideoProvider,
   PlaylistProvider,
   UserProvider,
-  AuthProvider
+  AuthProvider,
 } from "./contexts";
 import App from "./App";
+import { HamburgerProvider } from "./components/nav/nav-bar/HamburgerContext";
 
 const rootElement = document.getElementById("root");
 ReactDOM.render(
@@ -17,7 +18,9 @@ ReactDOM.render(
         <UserProvider>
           <VideoProvider>
             <PlaylistProvider>
-              <App />
+              <HamburgerProvider>
+                <App />
+              </HamburgerProvider>
             </PlaylistProvider>
           </VideoProvider>
         </UserProvider>

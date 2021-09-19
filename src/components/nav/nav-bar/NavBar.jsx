@@ -8,6 +8,8 @@ import { toast } from "react-toastify";
 import { toastConfig } from "../../../utils/toastConfig";
 import axios from "axios";
 import { API_SEARCH } from "../../../utils/api";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { useHamburger } from "./HamburgerContext";
 
 async function searchVideos(searchKey) {
   try {
@@ -27,6 +29,8 @@ const initialState = {
 export const NavBar = () => {
   const { searchKeyword } = useVideos("");
   const [searchResults, setSearchResults] = useState(initialState);
+
+  const { setShowHamburger } = useHamburger();
 
   useEffect(() => {
     let timer;
@@ -70,6 +74,12 @@ export const NavBar = () => {
   return (
     <nav className="navbar">
       <section className="navbar-container">
+        <div
+          className={`hamburger-section`}
+          onClick={() => setShowHamburger((currState) => !currState)}
+        >
+          <GiHamburgerMenu size={22} />
+        </div>
         <div className={`logo flex-c`}>
           <Logo size={25} />
         </div>

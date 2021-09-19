@@ -1,10 +1,11 @@
 import { NavBar } from "../../../components";
 import { useRef, useEffect } from "react";
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { ROUTE_SIGN_UP } from "../../../utils/appRoutes";
 import { useLogin } from "./useLogin";
-import { useAuth } from "../../../contexts";
 import "../form-styles.css";
+import { NavBarMobile } from "../../../components/nav/nav-bar/NavBarMobile";
+import { HamburgerMenu } from "../../../components/nav/nav-bar/HamburgerMenu";
 
 export const Login = () => {
   const login = useLogin();
@@ -66,6 +67,7 @@ export const Login = () => {
             </Link>
           </div>
         </section>
+        <HamburgerMenu />
       </main>
     </>
   );

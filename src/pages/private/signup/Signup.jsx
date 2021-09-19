@@ -5,6 +5,7 @@ import { ROUTE_LOGIN } from "../../../utils/appRoutes";
 import { useAuth } from "../../../contexts";
 import { useSignup } from "./useSignup";
 import "../form-styles.css";
+import { HamburgerMenu } from "../../../components/nav/nav-bar/HamburgerMenu";
 
 export const Signup = () => {
   const { isUserLoggedIn } = useAuth();
@@ -87,6 +88,7 @@ export const Signup = () => {
           </div>
         </section>
       </main>
+      <HamburgerMenu />
     </>
   );
 };

@@ -7,6 +7,7 @@ import { IoTimeSharp } from "react-icons/io5";
 import { useState, useEffect } from "react";
 import { Loader } from "../../../components/Loader";
 import { NavBarMobile } from "../../../components/nav/nav-bar/NavBarMobile";
+import { HamburgerMenu } from "../../../components/nav/nav-bar/HamburgerMenu";
 
 export const WatchLater = () => {
   const { getPlaylists } = useUser();
@@ -75,6 +76,7 @@ export const WatchLater = () => {
         </div>
       </main>
       <NavBarMobile />
+      <HamburgerMenu />
     </>
   );
 };

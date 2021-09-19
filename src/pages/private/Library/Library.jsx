@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 import { toastConfig } from "../../../utils/toastConfig";
 import { Loader } from "../../../components/Loader";
 import { NavBarMobile } from "../../../components/nav/nav-bar/NavBarMobile";
+import { HamburgerMenu } from "../../../components/nav/nav-bar/HamburgerMenu";
 
 const defaultPlaylists = ["liked videos", "watch history", "watch later"];
 
@@ -96,6 +97,7 @@ export const Library = () => {
         </div>
       </main>
       <NavBarMobile />
+      <HamburgerMenu />
     </>
   );
 };

@@ -8,6 +8,7 @@ import { useState, useEffect } from "react";
 
 import { Loader } from "../../../components/Loader";
 import { NavBarMobile } from "../../../components/nav/nav-bar/NavBarMobile";
+import { HamburgerMenu } from "../../../components/nav/nav-bar/HamburgerMenu";
 
 export const History = () => {
   const { getPlaylists } = useUser();
@@ -76,6 +77,7 @@ export const History = () => {
         </div>
       </main>
       <NavBarMobile />
+      <HamburgerMenu />
     </>
   );
 };

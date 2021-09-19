@@ -8,10 +8,14 @@ import { toast } from "react-toastify";
 import { toastConfig } from "../../utils/toastConfig";
 import { Loader } from "../../components/Loader";
 import { NavBarMobile } from "../../components/nav/nav-bar/NavBarMobile";
+import { useHamburger } from "../../components/nav/nav-bar/HamburgerContext";
+import { HamburgerMenu } from "../../components/nav/nav-bar/HamburgerMenu";
 
 export const HomePage = () => {
   const { filteredVideos, allVideos } = useVideos();
   const { status, error } = allVideos;
+
+  const { showHamburger, setShowHamburger } = useHamburger();
 
   return (
     <>
@@ -28,6 +32,7 @@ export const HomePage = () => {
         </div>
       </main>
       <NavBarMobile />
+      <HamburgerMenu />
     </>
   );
 };

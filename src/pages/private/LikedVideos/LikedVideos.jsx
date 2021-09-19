@@ -7,6 +7,7 @@ import { AiTwotoneLike } from "react-icons/ai";
 import { useEffect, useState } from "react";
 import { Loader } from "../../../components/Loader";
 import { NavBarMobile } from "../../../components/nav/nav-bar/NavBarMobile";
+import { HamburgerMenu } from "../../../components/nav/nav-bar/HamburgerMenu";
 
 export const LikedVideos = () => {
   const { getPlaylists } = useUser();
@@ -75,6 +76,7 @@ export const LikedVideos = () => {
         </div>
       </main>
       <NavBarMobile />
+      <HamburgerMenu />
     </>
   );
 };

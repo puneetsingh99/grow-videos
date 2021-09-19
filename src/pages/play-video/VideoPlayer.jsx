@@ -7,6 +7,7 @@ import { getVideo } from "../../contexts/video-context/utils/getVideo";
 import { Loader } from "../../components/Loader";
 import { useUser } from "../../contexts";
 import { NavBarMobile } from "../../components/nav/nav-bar/NavBarMobile";
+import { HamburgerMenu } from "../../components/nav/nav-bar/HamburgerMenu";
 
 const initialState = {
   status: "idle",
@@ -62,6 +63,7 @@ export const VideoPlayer = () => {
         </div>
       </section>
       <NavBarMobile />
+      <HamburgerMenu />
     </main>
   );
 };
