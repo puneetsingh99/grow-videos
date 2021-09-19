@@ -123,6 +123,46 @@
   margin-top: 2rem;
 }
 
+.video-filter {
+  padding: 0.25rem 1rem;
+  overflow-y: hidden;
+  overflow-x: scroll;
+  display: none;
+  list-style: none;
+  align-items: center;
+  gap: 1rem;
+  width: 95%;
+  margin: auto;
+}
+
+.filter-pill {
+  min-width: max-content;
+  padding: 0.25rem 0.5rem;
+  font-size: 1.125rem;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+  color: var(--gray-700);
+  cursor: pointer;
+  transition: 300ms ease-in-out;
+  -webkit-transition: 300ms ease-in-out;
+  -moz-transition: 300ms ease-in-out;
+  -ms-transition: 300ms ease-in-out;
+  -o-transition: 300ms ease-in-out;
+}
+
+.filter-pill:hover {
+  background-color: var(--gray-500);
+  color: white;
+}
+
+.highlight-filter-pill {
+  background-color: var(--gray-600);
+  color: white;
+}
+
 @media (max-width: 640px) {
   .navbar-container {
     width: 100%;
@@ -150,5 +190,9 @@
 
   .hamburger-section {
     display: block;
+  }
+
+  .video-filter {
+    display: flex;
   }
 }
